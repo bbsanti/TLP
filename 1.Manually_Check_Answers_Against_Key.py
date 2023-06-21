@@ -4,10 +4,10 @@ from collections import Counter
 # Specify the names of your columns and your labels of interest
 video_id_column = 'Input.video_url'
 label_column = 'Answer.category.label'
-labels_of_interest = ['Dissolve Transition', 'Wipe Transition']  # Replace with your labels
+labels_of_interest = ['Wipe Transition', 'Dissolve Transition']  # Replace with your labels
 
 # Load the CSV file
-df = pd.read_csv('D:/Users/Santi/Downloads/Batch_5092411_batch_results (1).csv')
+df = pd.read_csv('D:/Users/Santi/Downloads/Batch_5094867_batch_results.csv')
 
 # Filter rows: only consider rows where 'label' is in 'labels_of_interest'
 df = df[df[label_column].isin(labels_of_interest)]
@@ -36,7 +36,7 @@ grouped_df['most_common_label'] = grouped_df[label_column].apply(most_common_lab
 filtered_df = grouped_df[grouped_df['has_duplicate']]
 
 # Load the second CSV file
-df2 = pd.read_csv('D:/Users/Santi/Downloads/Bally_PIT@TBR_URLS - KEY of 1-100.csv')  # Replace with your actual file path
+df2 = pd.read_csv('D:/Users/Santi/Documents/Github_Repos/TLP/Bally_PIT@TBR_URLS - KEY of 101-200.csv')  # Replace with your actual file path
 
 # Merge the two dataframes on 'video_id_column'
 merged_df = pd.merge(filtered_df, df2, on=video_id_column)

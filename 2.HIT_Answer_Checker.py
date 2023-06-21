@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the first CSV file
-df1 = pd.read_csv('D:/Users/Santi/Downloads/Batch_5092411_batch_results (1).csv')  # replace with your actual file path
+df1 = pd.read_csv('C:/Users/Santi/Downloads/Batch_5091608_batch_results.csv')  # replace with your actual file path
 
 # Load the second CSV file
 df2 = pd.read_csv('D:/Users/Santi/Documents/Github_Repos/TLP/Bally_PIT@TBR_URLS - KEY of 1-100.csv')  # replace with your actual file path
@@ -40,4 +40,4 @@ for i, row in df1.iterrows():
             df1.at[i, mismatch_column] = mismatch_string
 
 # Save the modified df1 as a new CSV file
-df1.to_csv('D:/Users/Santi/Downloads/Batch_5092411_batch_results-checked.csv', index=False)  # replace with your desired file path
+df1.to_csv('e', index=False)  # replace with your desired file path
